@@ -1,0 +1,3 @@
+Opened file, once again setup the memory map and looked at the main function. No more create_password! Yay! Looked at check_password... Nevermind. they moved the password comparison to be a direct compare. well done.
+time to throw that into the password field to check.
+Yep. remembering that endianness is a thing, password worked, onto the next one.
