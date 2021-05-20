@@ -1,0 +1,5 @@
+Binary split at 4400, earlier data empty, program starts at 4400
+Started reversing by looking at program entry and looking at each function, the first function called "create_password" seems interesting, had a look at that. Gavea shot in the dark that it copying data to a location was it setting up the password to be read and compared, upon further investigation of the check_password code, it was. Read out data from create_password at offset 4488 and entered in as a password. 
+complete.
+on to next level
+
