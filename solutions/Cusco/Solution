@@ -1,0 +1,6 @@
+I'm a Llama again!!!
+so, this one. First time I have found Ghidra to explain the issue better than the online editor. The login function clearly allocates 16 characters for the password, but reads 48 bytes into it.
+I did various testing to find the "smart" answer to this, Just repeating the return address i want over and over for the full 0x30 bytes I have to the unlock_door function, it eventually just returns to unlock door, we don't care if the rest of the stack is corrupted, as the return address is all we need.
+The only thing to account for would be if any operations use a single byte value off the stack, as the injection buffer relies on it being aligned to the byte. I tried anyway and was prepared to swap the bytes if needed, but the alignement was fine.
+Next level
+
