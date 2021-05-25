@@ -1,0 +1,2 @@
+Ran through the emulator once i worked out the location of the decrypted binary, and dumped a second file, and once there, after poking at the new function a bit, found what was meant to be the interrupt. found that a simple if statement was being run on comparing the first 2 bytes with a hardcoded value, sending those bytes with corrected endianness unlocks the door.
+next. 
