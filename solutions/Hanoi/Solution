@@ -1,0 +1,9 @@
+Opened file, once again setup the memory map and looked at the main function. This time the whole thing has been abstracted out into login(), which does little to change it. I just look at login as if it were main().
+First things: check for any obvious password within the memory or binary, i don't believe there is, but worth checking.
+no passwords. nice. they fixed a big flaw. next step:
+How do they check that passwords are correct or not?
+test_password_valid. it supposedly contacts a hardware security module that sets a bit in memory if there is the correct password.
+let's poke at the function that does that.
+nothing major here, it mainly just calls an interrupt. so the flag is checked in login()
+I see. the flag is checked, and is within the area of the password memory area. it's the 17th character of the password. take that magic key, paste it in to fill the password slot 17 times (as it allows more than 16 chars of password, and it unlocks. neat.
+next level
